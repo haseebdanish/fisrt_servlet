@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Placement Management - Login/Signup</title>
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .container {
+            background: white;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+            text-align: center;
+            width: 350px;
+            animation: fadeIn 0.5s ease-in-out;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(-10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        h2 {
+            color: #333;
+            margin-bottom: 20px;
+        }
+        .input-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        input {
+            width: calc(100% - 20px);
+            padding: 12px;
+            margin: 8px 0;
+            border: 1px solid #ccc;
+            border-radius: 6px;
+            font-size: 16px;
+            text-align: center;
+        }
+        button {
+            background-color: #5a67d8;
+            color: white;
+            padding: 12px;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            width: 100%;
+            font-size: 16px;
+            transition: 0.3s;
+        }
+        button:hover {
+            background-color: #4c51bf;
+        }
+        .toggle {
+            color: #5a67d8;
+            cursor: pointer;
+            margin-top: 15px;
+            display: block;
+            font-size: 14px;
+        }
+        .toggle:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <div class="container" id="loginContainer">
+        <h2>Login</h2>
+        <div class="input-container">
+            <input type="text" placeholder="Username" id="loginUser">
+            <input type="password" placeholder="Password" id="loginPass">
+        </div>
+        <button onclick="login()">Login</button>
+        <span class="toggle" onclick="toggleForm()">Don't have an account? Sign up</span>
+    </div>
+    
+    <div class="container" id="signupContainer" style="display: none;">
+        <h2>Sign Up</h2>
+        <div class="input-container">
+            <input type="text" placeholder="Username" id="signupUser">
+            <input type="email" placeholder="Email" id="signupEmail">
+            <input type="password" placeholder="Password" id="signupPass">
+        </div>
+        <button onclick="signup()">Sign Up</button>
+        <span class="toggle" onclick="toggleForm()">Already have an account? Login</span>
+    </div>
+
+    <script>
+        function toggleForm() {
+            document.getElementById('loginContainer').style.display = 
+                document.getElementById('loginContainer').style.display === 'none' ? 'block' : 'none';
+            document.getElementById('signupContainer').style.display = 
+                document.getElementById('signupContainer').style.display === 'none' ? 'block' : 'none';
+        }
+
+        function login() {
+            alert("Login functionality to be implemented");
+        }
+        
+        function signup() {
+            alert("Signup functionality to be implemented");
+        }
+    </script>
+</body>
+</html>
