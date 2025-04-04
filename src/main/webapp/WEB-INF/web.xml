@@ -27,6 +27,18 @@
     <url-pattern>/RC</url-pattern>
   </servlet-mapping>
   
+  
+  <servlet>
+    <description></description>
+    <display-name>FetchAllStudentsController</display-name>
+    <servlet-name>FetchAllStudentsController</servlet-name>
+    <servlet-class>org.cms.controllers.FetchAllStudentsController</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>FetchAllStudentsController</servlet-name>
+    <url-pattern>/FetchAll</url-pattern>
+  </servlet-mapping>
+  
   <context-param>
   	<param-name>admin</param-name>
   	<param-value>admin@presidencyuniversity</param-value>
