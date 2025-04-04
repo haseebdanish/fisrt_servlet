@@ -6,8 +6,8 @@ import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
 
-import DataSource.MysqlDBConnection;
-import model.Course;
+import org.cms.datasources.MysqlDBConnection;
+import org.cms.model.Course;
 
 public class CourseRepository {
 	

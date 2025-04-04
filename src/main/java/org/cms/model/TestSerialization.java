@@ -1,4 +1,4 @@
-package model;
+package org.cms.model;
 import java.io.*;
 
 public class TestSerialization {
