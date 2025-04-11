@@ -36,6 +36,36 @@
     <servlet-name>FetchAllStudentsController</servlet-name>
     <url-pattern>/FetchAll</url-pattern>
   </servlet-mapping>
+   <servlet>
+    <description></description>
+    <display-name>StudentServlet</display-name>
+    <servlet-name>StudentServlet</servlet-name>
+    <servlet-class>org.cms.controllers.StudentServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>StudentServlet</servlet-name>
+    <url-pattern>/Student</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>EditStudentController</display-name>
+    <servlet-name>EditStudentController</servlet-name>
+    <servlet-class>org.cms.controllers.EditStudentController</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>EditStudentController</servlet-name>
+    <url-pattern>/edit-student</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>DeleteStudentController</display-name>
+    <servlet-name>DeleteStudentController</servlet-name>
+    <servlet-class>org.cms.controllers.DeleteStudentController</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>DeleteStudentController</servlet-name>
+    <url-pattern>/delete-student</url-pattern>
+  </servlet-mapping>
   
   <context-param>
   	<param-name>admin</param-name>
