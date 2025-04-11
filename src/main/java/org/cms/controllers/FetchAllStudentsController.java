@@ -17,14 +17,23 @@ import jakarta.servlet.http.HttpServletResponse;
 import jakarta.servlet.http.HttpSession;
 
 public class FetchAllStudentsController extends HttpServlet {
+	private static final long serialVersionUID = 1L;
 	private ServletContext context;
 	private ServletConfig config;
 	
+	public FetchAllStudentsController() {
+        super();
+    }
 	
 	public void init(ServletConfig config) {
 		this.config = config;
 		this.context = getServletContext();
 		System.out.println("Servlet Loaded");
+	}
+	
+	
+	public ServletConfig getServletConfig() {
+		return config;
 	}
 	
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException,IOException{
@@ -44,6 +53,7 @@ public class FetchAllStudentsController extends HttpServlet {
 			StudentRepository repository=new StudentRepository(ds);
 			StudentServiceImpl service=new StudentServiceImpl(repository);
 			List<Student> fetched = service.fetchAll();
+			session.setAttribute("xyz", fetched);
 		} catch(Exception e) {
 			System.out.println(e);
 		}
