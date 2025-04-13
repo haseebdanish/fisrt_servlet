@@ -37,9 +37,9 @@ public class CourseRepository {
 			r = ps.executeUpdate();
 		
 		}catch(Exception e){
-			return r;
+			System.out.println(e);
 		}
-		return 0;
+		return r;
 	}
 	
 	public int updateCourse(Course c, String id) {

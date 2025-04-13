@@ -36,6 +36,56 @@
     <servlet-name>FetchAllStudentsController</servlet-name>
     <url-pattern>/FetchAll</url-pattern>
   </servlet-mapping>
+  <servlet>
+  	<description></description>
+  	<display-name>RegisterCourseController</display-name>
+  	<servlet-name>RegisterCourseController</servlet-name>
+  	<servlet-class>org.cms.controllers.RegisterCourseController</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  	<servlet-name>RegisterCourseController</servlet-name>
+    <url-pattern>/RegisterCourse</url-pattern>
+  </servlet-mapping>
+  <servlet>
+  	<description></description>
+  	<display-name>CourseServlet</display-name>
+  	<servlet-name>CourseServlet</servlet-name>
+  	<servlet-class>org.cms.controllers.CourseServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  	<servlet-name>CourseServlet</servlet-name>
+    <url-pattern>/Course</url-pattern>
+  </servlet-mapping>
+  <servlet>
+  	<description></description>
+  	<display-name>DeleteCourseController</display-name>
+  	<servlet-name>DeleteCourseController</servlet-name>
+  	<servlet-class>org.cms.controllers.DeleteCourseController</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  	<servlet-name>DeleteCourseController</servlet-name>
+    <url-pattern>/DeleteCourse</url-pattern>
+  </servlet-mapping>
+  <servlet>
+  	<description></description>
+  	<display-name>EditCourseController</display-name>
+  	<servlet-name>EditCourseController</servlet-name>
+  	<servlet-class>org.cms.controllers.EditCourseController</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  	<servlet-name>EditCourseController</servlet-name>
+    <url-pattern>/EditCourse</url-pattern>
+  </servlet-mapping>
+  <servlet>
+  	<description></description>
+  	<display-name>FetchAllCoursesController</display-name>
+  	<servlet-name>FetchAllCoursesController</servlet-name>
+  	<servlet-class>org.cms.controllers.FetchAllCoursesController</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  	<servlet-name>FetchAllCoursesController</servlet-name>
+    <url-pattern>/FetchAllCourses</url-pattern>
+  </servlet-mapping>
    <servlet>
     <description></description>
     <display-name>StudentServlet</display-name>

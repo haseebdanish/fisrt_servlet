@@ -72,17 +72,14 @@ public class RegisterCourseController extends HttpServlet {
 			MysqlDBConnection ds = new MysqlDBConnection();
 			CourseRepository repository=new CourseRepository(ds);
 			CourseServiceImpl service=new CourseServiceImpl();
-			r = service.insertCourse(c);
+		r = service.insertCourse(c);
 		} catch(Exception e) {
 			System.out.println(e);
 		}
 		if(r==1)
-			response.sendRedirect("success.jsp");
+			response.sendRedirect("Course");
 		else
 			response.sendRedirect("error.jsp");
-		
-		
-		
 	}
 
 }
