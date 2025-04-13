@@ -65,7 +65,7 @@ public class RegistrationController extends HttpServlet {
 		// Receive from Request
 		Student s = new Student();
 		s.setSid(request.getParameter("id"));
-		s.setSname(request.getParameter("sname"));
+		s.setSname(request.getParameter("name"));
 		s.setAddress(request.getParameter("address"));
 		s.setAdmissionyear(Integer.parseInt(
 				request.getParameter("year").toString()));
@@ -75,17 +75,14 @@ public class RegistrationController extends HttpServlet {
 			MysqlDBConnection ds = new MysqlDBConnection();
 			StudentRepository repository=new StudentRepository(ds);
 			StudentServiceImpl service=new StudentServiceImpl(repository);
-			r = service.insertStudent(s);
+		r = service.insertStudent(s);
 		} catch(Exception e) {
 			System.out.println(e);
 		}
 		if(r==1)
-			response.sendRedirect("success.jsp");
+			 response.sendRedirect("Student");	
 		else
-			response.sendRedirect("error.jsp");
-		
-		
-		
+		response.sendRedirect("error.jsp");
 	}
 
 }

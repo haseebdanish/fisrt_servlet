@@ -10,12 +10,13 @@
 </head>
 <body>
 <%  
-	try {
-	HttpSession oldsession=request.getSession(false);
-	List<Student> fetchedStudents=(List<Student>)oldsession.getAttribute("xyz");
-	// project in a html
-	out.println(fetchedStudents);
-	}catch(Exception e){}
+try {
+HttpSession oldsession=request.getSession(false);
+List<Student> fetchedStudents=(List<Student>)oldsession.getAttribute("xyz");
+// project in a html table 
+
+out.println(fetchedStudents);
+}catch(Exception e){}
 %>
 </body>
 </html>

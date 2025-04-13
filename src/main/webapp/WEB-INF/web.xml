@@ -58,6 +58,16 @@
   </servlet-mapping>
   <servlet>
     <description></description>
+    <display-name>UpdateStudentController</display-name>
+    <servlet-name>UpdateStudentController</servlet-name>
+    <servlet-class>org.cms.controllers.UpdateStudentController</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>UpdateStudentController</servlet-name>
+    <url-pattern>/update-student</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
     <display-name>DeleteStudentController</display-name>
     <servlet-name>DeleteStudentController</servlet-name>
     <servlet-class>org.cms.controllers.DeleteStudentController</servlet-class>
@@ -66,7 +76,16 @@
     <servlet-name>DeleteStudentController</servlet-name>
     <url-pattern>/delete-student</url-pattern>
   </servlet-mapping>
-  
+  <servlet>
+    <description></description>
+    <display-name>UpdateStudentPostController</display-name>
+    <servlet-name>UpdateStudentPostController</servlet-name>
+    <servlet-class>org.cms.controllers.UpdateStudentPostController</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>UpdateStudentPostController</servlet-name>
+    <url-pattern>/update-studentPost</url-pattern>
+  </servlet-mapping>
   <context-param>
   	<param-name>admin</param-name>
   	<param-value>admin@presidencyuniversity</param-value>

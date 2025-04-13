@@ -44,19 +44,20 @@ public class StudentRepository {
 			r = ps.executeUpdate();
 		
 		}catch(Exception e){
-			return r;
+			System.out.println(e);
 		}
-		return 0;
+		return r;
 	}
 	
 	public int updateStudent(Student s, String id) {
 		int r = 0;
 		try {
-			String sql = "update student set address=?, admissionyear=? where sid=?";
+			String sql = "update student set sname=?,address=?, admissionyear=? where sid=?";
 			PreparedStatement ps = connection.getConnection().prepareStatement(sql);
-			ps.setString(1, s.getAddress());
-			ps.setInt(2, s.getAdmissionyear());
-			ps.setString(3, id);
+			ps.setString(1, s.getSname());
+			ps.setString(2, s.getAddress());
+			ps.setInt(3, s.getAdmissionyear());
+			ps.setString(4, id);
 			r = ps.executeUpdate();
 		}catch (Exception e) {}
 		return r;
@@ -90,7 +91,23 @@ public class StudentRepository {
 			} catch (Exception e){}
 		return list;
 	}
-	public Student fetchOneStudent(String s) {
-		return null;
+	public Student fetchOneStudent(String id) {
+		Student s=new Student();
+		try {
+			String sql="select * from student where sid=?";	
+			PreparedStatement ps=connection.getConnection().prepareStatement(sql);
+			ps.setString(1,id);
+			ResultSet r=ps.executeQuery();
+			while(r.next()) {
+			s.setSid(r.getString(1));
+			s.setSname(r.getString(2));
+			s.setAddress(r.getString(3));
+			s.setAdmissionyear(r.getInt(0));
+			}
+			System.out.print(s);
+		}catch(Exception e) {
+			System.out.println(e);
+		}
+		return s;
 	}
 }

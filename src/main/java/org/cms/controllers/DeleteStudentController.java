@@ -28,8 +28,11 @@ public class DeleteStudentController extends HttpServlet {
 	    protected void doGet(HttpServletRequest request, HttpServletResponse response)
 	        throws ServletException, IOException {
 
-	       String id = request.getParameter("sid");
-	        studentRepo.deleteStudent(id);
-	        response.sendRedirect("student-list.jsp");
+	    	 String id = request.getParameter("id");
+		       int r= studentRepo.deleteStudent(id);
+		        if (r==1)
+		        	response.sendRedirect("Student");
+		        else
+		        	response.sendRedirect("error.jsp");
 	    }
 	}
