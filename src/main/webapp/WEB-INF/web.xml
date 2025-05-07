@@ -2,7 +2,7 @@
 <web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="https://jakarta.ee/xml/ns/jakartaee" xmlns:web="http://xmlns.jcp.org/xml/ns/javaee" xsi:schemaLocation="https://jakarta.ee/xml/ns/jakartaee https://jakarta.ee/xml/ns/jakartaee/web-app_5_0.xsd http://xmlns.jcp.org/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" id="WebApp_ID" version="5.0">
   <display-name>fisrt_servlet</display-name>
   <welcome-file-list>
-  	<welcome-file>index.jsp</welcome-file>
+    <welcome-file>index.jsp</welcome-file>
   </welcome-file-list>
   <servlet>
     <description></description>
@@ -10,16 +10,16 @@
     <servlet-name>RegistrationController</servlet-name>
     <servlet-class>org.cms.controllers.RegistrationController</servlet-class>
     <init-param>
-    	<param-name>username</param-name>
-    	<param-value>root</param-value>
+      <param-name>username</param-name>
+      <param-value>root</param-value>
     </init-param>
     <init-param>
-    	<param-name>password</param-name>
-    	<param-value>root</param-value>
+      <param-name>password</param-name>
+      <param-value>root</param-value>
     </init-param>
     <init-param>
-    	<param-name>driver</param-name>
-    	<param-value>com.mysql.jdbc.Driver</param-value>
+      <param-name>driver</param-name>
+      <param-value>com.mysql.jdbc.Driver</param-value>
     </init-param>
   </servlet>
   <servlet-mapping>
@@ -37,56 +37,56 @@
     <url-pattern>/FetchAll</url-pattern>
   </servlet-mapping>
   <servlet>
-  	<description></description>
-  	<display-name>RegisterCourseController</display-name>
-  	<servlet-name>RegisterCourseController</servlet-name>
-  	<servlet-class>org.cms.controllers.RegisterCourseController</servlet-class>
+    <description></description>
+    <display-name>RegisterCourseController</display-name>
+    <servlet-name>RegisterCourseController</servlet-name>
+    <servlet-class>org.cms.controllers.RegisterCourseController</servlet-class>
   </servlet>
   <servlet-mapping>
-  	<servlet-name>RegisterCourseController</servlet-name>
+    <servlet-name>RegisterCourseController</servlet-name>
     <url-pattern>/RegisterCourse</url-pattern>
   </servlet-mapping>
   <servlet>
-  	<description></description>
-  	<display-name>CourseServlet</display-name>
-  	<servlet-name>CourseServlet</servlet-name>
-  	<servlet-class>org.cms.controllers.CourseServlet</servlet-class>
+    <description></description>
+    <display-name>CourseServlet</display-name>
+    <servlet-name>CourseServlet</servlet-name>
+    <servlet-class>org.cms.controllers.CourseServlet</servlet-class>
   </servlet>
   <servlet-mapping>
-  	<servlet-name>CourseServlet</servlet-name>
+    <servlet-name>CourseServlet</servlet-name>
     <url-pattern>/Course</url-pattern>
   </servlet-mapping>
   <servlet>
-  	<description></description>
-  	<display-name>DeleteCourseController</display-name>
-  	<servlet-name>DeleteCourseController</servlet-name>
-  	<servlet-class>org.cms.controllers.DeleteCourseController</servlet-class>
+    <description></description>
+    <display-name>DeleteCourseController</display-name>
+    <servlet-name>DeleteCourseController</servlet-name>
+    <servlet-class>org.cms.controllers.DeleteCourseController</servlet-class>
   </servlet>
   <servlet-mapping>
-  	<servlet-name>DeleteCourseController</servlet-name>
+    <servlet-name>DeleteCourseController</servlet-name>
     <url-pattern>/DeleteCourse</url-pattern>
   </servlet-mapping>
   <servlet>
-  	<description></description>
-  	<display-name>EditCourseController</display-name>
-  	<servlet-name>EditCourseController</servlet-name>
-  	<servlet-class>org.cms.controllers.EditCourseController</servlet-class>
+    <description></description>
+    <display-name>EditCourseController</display-name>
+    <servlet-name>EditCourseController</servlet-name>
+    <servlet-class>org.cms.controllers.EditCourseController</servlet-class>
   </servlet>
   <servlet-mapping>
-  	<servlet-name>EditCourseController</servlet-name>
+    <servlet-name>EditCourseController</servlet-name>
     <url-pattern>/EditCourse</url-pattern>
   </servlet-mapping>
   <servlet>
-  	<description></description>
-  	<display-name>FetchAllCoursesController</display-name>
-  	<servlet-name>FetchAllCoursesController</servlet-name>
-  	<servlet-class>org.cms.controllers.FetchAllCoursesController</servlet-class>
+    <description></description>
+    <display-name>FetchAllCoursesController</display-name>
+    <servlet-name>FetchAllCoursesController</servlet-name>
+    <servlet-class>org.cms.controllers.FetchAllCoursesController</servlet-class>
   </servlet>
   <servlet-mapping>
-  	<servlet-name>FetchAllCoursesController</servlet-name>
+    <servlet-name>FetchAllCoursesController</servlet-name>
     <url-pattern>/FetchAllCourses</url-pattern>
   </servlet-mapping>
-   <servlet>
+  <servlet>
     <description></description>
     <display-name>StudentServlet</display-name>
     <servlet-name>StudentServlet</servlet-name>
@@ -137,7 +137,54 @@
     <url-pattern>/update-studentPost</url-pattern>
   </servlet-mapping>
   <context-param>
-  	<param-name>admin</param-name>
-  	<param-value>admin@presidencyuniversity</param-value>
+    <param-name>admin</param-name>
+    <param-value>admin@presidencyuniversity</param-value>
   </context-param>
+  <filter>
+    <display-name>AuthFilter</display-name>
+    <filter-name>AuthFilter</filter-name>
+    <filter-class>org.cms.controllers.AuthFilter</filter-class>
+  </filter>
+  <filter-mapping>
+    <filter-name>AuthFilter</filter-name>
+    <url-pattern>/AuthFilter</url-pattern>
+  </filter-mapping>
+  <servlet>
+    <description></description>
+    <display-name>LoginController</display-name>
+    <servlet-name>LoginController</servlet-name>
+    <servlet-class>org.cms.controllers.LoginController</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>LoginController</servlet-name>
+    <url-pattern>/LoginController</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <servlet-name>DashboardServlet</servlet-name>
+    <servlet-class>org.cms.controllers.DashboardServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>DashboardServlet</servlet-name>
+    <url-pattern>/dashboard</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>LoginServlet</display-name>
+    <servlet-name>LoginServlet</servlet-name>
+    <servlet-class>org.cms.controllers.LoginServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>LoginServlet</servlet-name>
+    <url-pattern>/LoginServlet</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>RegisterServlet</display-name>
+    <servlet-name>RegisterServlet</servlet-name>
+    <servlet-class>org.cms.controllers.RegisterServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>RegisterServlet</servlet-name>
+    <url-pattern>/RegisterServlet</url-pattern>
+  </servlet-mapping>
 </web-app>
